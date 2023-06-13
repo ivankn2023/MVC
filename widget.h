@@ -8,6 +8,7 @@
 #include "QVBoxLayout"
 #include "QListView"
 
+#include "datamodel.h"
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -15,8 +16,13 @@ class Widget : public QWidget
     QPushButton *btnDel;
     QLineEdit *lineEditEnter;
     QListView *listView;
+
+    dataModel *d_model;
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+public slots:
+    void insertValue();
+    void deleteValue();
 };
 #endif // WIDGET_H
